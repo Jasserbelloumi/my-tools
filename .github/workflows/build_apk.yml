@@ -2,8 +2,12 @@ name: Build Patched APK
 
 on:
   push:
+    branches:
+      - master
     paths:
-      - 'app/**' # يشتغل فقط عند تعديل الكود
+      - 'app/**'
+      - '*.gradle'
+      - '.github/workflows/**'
   workflow_dispatch:
 
 jobs:
@@ -19,12 +23,7 @@ jobs:
           java-version: '17'
           distribution: 'temurin'
 
-      # هذه الخطوة ستحاول بناء المشروع.. ستفشل غالباً بسبب أخطاء الكود المفكك
       - name: Build with Gradle
-        run: gradle assembleDebug
-
-      - name: Upload APK
-        uses: actions/upload-artifact@v4
-        with:
-          name: patched-vcam
-          path: app/build/outputs/apk/debug/app-debug.apk
+        run: |
+          chmod +x gradlew || true
+          gradle assembleDebug --stacktrace
