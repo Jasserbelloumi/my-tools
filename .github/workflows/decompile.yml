@@ -10,35 +10,34 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.MY_TOKEN }}
 
       - name: Set up Java
-        uses: actions/setup-java@v3
+        uses: actions/setup-java@v4
         with:
-          java-version: '11'
+          java-version: '17'
           distribution: 'temurin'
 
       - name: Install JADX
         run: |
-          sudo wget https://github.com/skylot/jadx/releases/download/v1.4.7/jadx-1.4.7.zip
-          sudo unzip jadx-1.4.7.zip -d /opt/jadx
+          sudo wget https://github.com/skylot/jadx/releases/download/v1.5.0/jadx-1.5.0.zip
+          sudo unzip jadx-1.5.0.zip -d /opt/jadx
           sudo ln -s /opt/jadx/bin/jadx /usr/local/bin/jadx
 
       - name: Decompile APK
         run: |
-          # ابحث عن أول ملف APK في المجلد
           APK_FILE=$(ls *.apk | head -n 1)
-          echo "Decompiling $APK_FILE..."
           jadx -d out_source "$APK_FILE"
+          rm -f jadx-1.5.0.zip
 
-      - name: Update README with Source Info
-        run: |
-          echo -e "\n## 📂 Decompiled Source Code Info\n- **Last Decompiled:** $(date)\n- **Files extracted to:** `out_source/` folder." >> README.md
-
-      - name: Commit and Push changes
+      - name: Commit and Push
+        env:
+          GITHUB_TOKEN: ${{ secrets.MY_TOKEN }}
         run: |
           git config --global user.name "Jasserbelloumi"
           git config --global user.email "jasser@github.com"
           git add .
-          git commit -m "Auto decompile APK and update README"
-          git push
+          git commit -m "Success: Auto decompile APK with MY_TOKEN" || echo "No changes"
+          git push origin master
