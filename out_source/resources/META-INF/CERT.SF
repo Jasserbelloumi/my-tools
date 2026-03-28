@@ -1,0 +1,68 @@
+Signature-Version: 1.0
+Created-By: Android Gradle 7.1.0
+SHA-256-Digest-Manifest: ip1U4CjnDUJTQPiqqA1fFIXSMAXY8ePBtAFIWFQlunM=
+X-Android-APK-Signed: 2
+
+Name: AndroidManifest.xml
+SHA-256-Digest: r5yce5PHRRoOXZWnzaetpMdHc9cMKbGUpQyLV6Dc6ak=
+
+Name: META-INF/com/android/build/gradle/app-metadata.properties
+SHA-256-Digest: qyEl0gweTXuPx7bl+Pv8i7t8SGFPLFky2lLrBtSnk70=
+
+Name: assets/xposed_init
+SHA-256-Digest: Fm4a/CNOM/TKtDcu3vzxHZJaF1M3KGOz8qpkVGfEFng=
+
+Name: classes.dex
+SHA-256-Digest: CucGKYdjkFKHvv7155u3rDthwfTSgYAoR7ua9FUZB7c=
+
+Name: res/2-.webp
+SHA-256-Digest: vhV5xCd02sfCznAoOEO5bN0w0Nj+qDUxbKa1BbrF8wA=
+
+Name: res/3N.xml
+SHA-256-Digest: b0/6ZDbQUm+qvp7vEJT2ikoLQMoI0cQ7ufEaEfvRAGU=
+
+Name: res/3c.webp
+SHA-256-Digest: 4mmvv4END+jit3NvlFbED+DeJ7kDYIHwlInd2QDF5h4=
+
+Name: res/7E.webp
+SHA-256-Digest: GTbGOtI9WTyc9jk31QMBk658+SHsLUR08K9j5DVz/eA=
+
+Name: res/R5.xml
+SHA-256-Digest: 0Mti07fUgUctsF4GgNRe/CumCqIg9ZhjZxWfKErogv4=
+
+Name: res/Vd.webp
+SHA-256-Digest: 61x2F9xXalpIQshwLbahwcjioHqQZreHuN58dKzdbKM=
+
+Name: res/YB.webp
+SHA-256-Digest: Ba+AfgEDnFt54SwOZqUJPJFzzJydWxbJGYtpv09/FDM=
+
+Name: res/Za.xml
+SHA-256-Digest: /6/KiCCkcPk2gxP69DjqoAbcPVD7qHHvox/rwGeSYXs=
+
+Name: res/co.webp
+SHA-256-Digest: n54TKrync8d+wnxmdsxvIhIuZb50laEmxs/GvRTv//s=
+
+Name: res/iN.webp
+SHA-256-Digest: U+ESy8h/4Vl+wC76gudm8fvgXLBq7S81H6mNBhkFtyg=
+
+Name: res/iP.webp
+SHA-256-Digest: caopbFPlFM2Y8lcWu3wZiFcfGjoq3pw0mylAhG4Vmw4=
+
+Name: res/oy.xml
+SHA-256-Digest: FSDHbbQarsUcY/rQSuY9LbYuxoJBVUMFblMTylX6Jhc=
+
+Name: res/pY.webp
+SHA-256-Digest: NPpi4NfSl9Hb0a3dBAqUweRKAS7QwiOhJyvIhLuIvio=
+
+Name: res/qm.xml
+SHA-256-Digest: oZ74MSZ3ibLSnaFAxDpIOTSqTL0IUbqDS6BQB27sD/s=
+
+Name: res/uF.xml
+SHA-256-Digest: Mcm89V8fZU40vSv5rSThCRmdbw4KNcYbXhyS8Gd2nUY=
+
+Name: res/xC.webp
+SHA-256-Digest: BpFTFWihfcdPVh9VgZERAG6cttKOiyNmMDv1Lv5ME4w=
+
+Name: resources.arsc
+SHA-256-Digest: faijYJsv65RM4jflVRbB48ux6PJOA59fNdS4Y59I+1U=
+
