@@ -23,18 +23,20 @@ jobs:
 
       - name: Install JADX
         run: |
-          sudo wget https://github.com/skylot/jadx/releases/download/v1.5.0/jadx-1.5.0.zip
-          sudo unzip jadx-1.5.0.zip -d /opt/jadx
-          sudo ln -s /opt/jadx/bin/jadx /usr/local/bin/jadx
+          wget https://github.com/skylot/jadx/releases/download/v1.5.0/jadx-1.5.0.zip
+          unzip jadx-1.5.0.zip -d jadx_bin
+          echo "$(pwd)/jadx_bin/bin" >> $GITHUB_PATH
 
       - name: Decompile APK
         run: |
           APK_FILE=$(ls *.apk | head -n 1)
           if [ -f "$APK_FILE" ]; then
-            jadx -d out_source "$APK_FILE"
+            ./jadx_bin/bin/jadx -d out_source "$APK_FILE"
           else
             echo "No APK found!" && exit 1
           fi
+          # تنظيف الملفات الكبيرة فوراً قبل مرحلة الـ Git
+          rm -rf jadx-1.5.0.zip jadx_bin
 
       - name: Commit and Push
         env:
@@ -42,6 +44,7 @@ jobs:
         run: |
           git config --global user.name "Jasserbelloumi"
           git config --global user.email "jasser@github.com"
-          git add .
-          git commit -m "Success: Auto decompile APK" || echo "No changes"
+          # إضافة المجلدات البرمجية فقط وتجنب أي ملفات مضغوطة
+          git add out_source/ README.md
+          git commit -m "Success: Clean decompile without large files" || echo "No changes"
           git push origin HEAD
