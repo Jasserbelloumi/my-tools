@@ -1,0 +1,44 @@
+name: Auto Decompile APK
+
+on:
+  push:
+    paths:
+      - '*.apk'
+
+jobs:
+  decompile:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Set up Java
+        uses: actions/setup-java@v3
+        with:
+          java-version: '11'
+          distribution: 'temurin'
+
+      - name: Install JADX
+        run: |
+          sudo wget https://github.com/skylot/jadx/releases/download/v1.4.7/jadx-1.4.7.zip
+          sudo unzip jadx-1.4.7.zip -d /opt/jadx
+          sudo ln -s /opt/jadx/bin/jadx /usr/local/bin/jadx
+
+      - name: Decompile APK
+        run: |
+          # ابحث عن أول ملف APK في المجلد
+          APK_FILE=$(ls *.apk | head -n 1)
+          echo "Decompiling $APK_FILE..."
+          jadx -d out_source "$APK_FILE"
+
+      - name: Update README with Source Info
+        run: |
+          echo -e "\n## 📂 Decompiled Source Code Info\n- **Last Decompiled:** $(date)\n- **Files extracted to:** `out_source/` folder." >> README.md
+
+      - name: Commit and Push changes
+        run: |
+          git config --global user.name "Jasserbelloumi"
+          git config --global user.email "jasser@github.com"
+          git add .
+          git commit -m "Auto decompile APK and update README"
+          git push
