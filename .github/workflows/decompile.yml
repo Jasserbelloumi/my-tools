@@ -4,6 +4,7 @@ on:
   push:
     paths:
       - '*.apk'
+  workflow_dispatch:
 
 jobs:
   decompile:
@@ -29,8 +30,11 @@ jobs:
       - name: Decompile APK
         run: |
           APK_FILE=$(ls *.apk | head -n 1)
-          jadx -d out_source "$APK_FILE"
-          rm -f jadx-1.5.0.zip
+          if [ -f "$APK_FILE" ]; then
+            jadx -d out_source "$APK_FILE"
+          else
+            echo "No APK found!" && exit 1
+          fi
 
       - name: Commit and Push
         env:
@@ -39,5 +43,5 @@ jobs:
           git config --global user.name "Jasserbelloumi"
           git config --global user.email "jasser@github.com"
           git add .
-          git commit -m "Success: Auto decompile APK with MY_TOKEN" || echo "No changes"
-          git push origin master
+          git commit -m "Success: Auto decompile APK" || echo "No changes"
+          git push origin HEAD
