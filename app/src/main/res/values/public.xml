@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <public type="color" name="background_grey" id="0x7f010000" />
+    <public type="color" name="black" id="0x7f010001" />
+    <public type="color" name="divider_color" id="0x7f010002" />
+    <public type="color" name="purple_200" id="0x7f010003" />
+    <public type="color" name="purple_500" id="0x7f010004" />
+    <public type="color" name="purple_700" id="0x7f010005" />
+    <public type="color" name="teal_200" id="0x7f010006" />
+    <public type="color" name="teal_700" id="0x7f010007" />
+    <public type="color" name="text_primary" id="0x7f010008" />
+    <public type="color" name="text_secondary" id="0x7f010009" />
+    <public type="color" name="warning_red" id="0x7f01000a" />
+    <public type="color" name="white" id="0x7f01000b" />
+    <public type="drawable" name="res_0x7f020000_ic_launcher_foreground__0" id="0x7f020000" />
+    <public type="drawable" name="ic_launcher_background" id="0x7f020001" />
+    <public type="drawable" name="ic_launcher_foreground" id="0x7f020002" />
+    <public type="id" name="button" id="0x7f030000" />
+    <public type="id" name="button2" id="0x7f030001" />
+    <public type="id" name="switch1" id="0x7f030002" />
+    <public type="id" name="switch2" id="0x7f030003" />
+    <public type="id" name="switch3" id="0x7f030004" />
+    <public type="id" name="switch4" id="0x7f030005" />
+    <public type="id" name="switch5" id="0x7f030006" />
+    <public type="id" name="textView" id="0x7f030007" />
+    <public type="id" name="textView2" id="0x7f030008" />
+    <public type="layout" name="activity_main" id="0x7f040000" />
+    <public type="mipmap" name="ic_launcher" id="0x7f050000" />
+    <public type="mipmap" name="ic_launcher_round" id="0x7f050001" />
+    <public type="string" name="Warning" id="0x7f060000" />
+    <public type="string" name="app_name" id="0x7f060001" />
+    <public type="string" name="click_to_go_to_repo" id="0x7f060002" />
+    <public type="string" name="description" id="0x7f060003" />
+    <public type="string" name="gitee" id="0x7f060004" />
+    <public type="string" name="negative" id="0x7f060005" />
+    <public type="string" name="permission_description" id="0x7f060006" />
+    <public type="string" name="permission_lack_warn" id="0x7f060007" />
+    <public type="string" name="positive" id="0x7f060008" />
+    <public type="string" name="settings_title" id="0x7f060009" />
+    <public type="string" name="switch1" id="0x7f06000a" />
+    <public type="string" name="switch2" id="0x7f06000b" />
+    <public type="string" name="switch3" id="0x7f06000c" />
+    <public type="string" name="switch4" id="0x7f06000d" />
+    <public type="string" name="switch5" id="0x7f06000e" />
+    <public type="style" name="Theme.VCAM" id="0x7f070000" />
+</resources>
